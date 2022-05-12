@@ -7,6 +7,54 @@
     <title>Belajar ReactJs</title>
 </head>
 <body>
-    <h1>Hello ReactJs !</h1>
+    <div id="root"></div>
+
+
+
+    <!-- CDN ReactJS V.17 -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <script>
+
+        
+        // versi JS Murni
+        // const root = document.querySelector('#root');
+        // const element = document.createElement('h1');
+        // element.textContent = 'Hello Reactjs!';
+        // element.className = 'heading-1';
+        // root.appendChild(element);
+        
+        // Versi Reactjs
+
+        // 1. react.js vs react-dom.js =======================================================================
+        // const root = document.querySelector('#root');
+        // const element = React.createElement('h1', {
+        //     children: 'Hello Reactjs!',
+        //     className: 'heading-1',
+        // });
+        // console.log(element)
+        // ReactDOM.render(element, root);
+        
+        // 2. Fragment =======================================================================================
+        const root = document.querySelector('#root');
+        const p1 = React.createElement('p', {
+            children: 'Paragraf 1',
+        });
+        const p2 = React.createElement('p', {
+            children: 'Paragraf 2',
+        });
+        // tanpa fragment
+        // const element = React.createElement('div', {
+        //     children: [p1,p2]
+        // });
+        // dengan fragment
+        const element = React.createElement(React.Fragment, {
+            children: [p1,p2],
+        });
+        console.log(element)
+        ReactDOM.render(element, root);
+
+    </script>
 </body>
 </html>
